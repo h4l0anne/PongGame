@@ -28,13 +28,13 @@ paddle_right.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
-ball.speed(30)
+ball.speed(50)
 ball.shape("circle")
 ball.color("red")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.1 # every time the ball moves, it moves by 2 pixels
-ball.dy = 0.1
+ball.dx = 0.2 # every time the ball moves, it moves by 2 pixels
+ball.dy = 0.2
 
 # Function to move the paddle
 def paddle_left_up():
@@ -94,6 +94,6 @@ while True:
        ball.setx(340)
        ball.dx *= -1
 
-    if (ball.xcor() < -340 and ball.xcor() < 350) and (ball.ycor() < paddle_right.ycor() + 40 and ball.ycor() > paddle_right.ycor() - 40):
-       ball.setx(340)
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_left.ycor() + 40 and ball.ycor() > paddle_left.ycor() - 40):
+       ball.setx(-340)
        ball.dx *= -1
